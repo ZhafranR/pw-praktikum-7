@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .switch {
+            
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ffffffbb;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.middle-toggle {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum-7</title>
+    <!-- <h1>- Created By: Zhafran Ramadhan</h1> -->
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='wave'>
+        </div>
+    </div>
+    
+    <div class='contain'>
+        <h1>Zhafran Ramadhan 105219024</h2>
+        <div class='middle-toggle'>
+            <label class="switch">
+                <input type="checkbox" id='toggle' onclick='toggleTheme()'>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="container">
+            <div class="Grid-1">
+            
+                <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+
+                <div class="dropdown">
+                    <input type="checkbox" class="dropdown__switch" id="filter-switch" hidden />
+                    <label for="filter-switch" class="dropdown__options-filter">
+                        <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown__filter-selected" aria-selected="true">
+                                provinsi...
+                            </li>
+                            <ul class="dropdown__select" onclick="addList()" id="provinsi-menu">
+                                <li class="dropdown__select-option" role="option">
+                                    Aceh
+                                </li>
+                                <li class="dropdown__select-option" role="option">
+                                    Kalimantan Utara
+                                </li>
+                                <li class="dropdown__select-option" role="option">
+                                    Jawa Barat
+                                </li>
+                                <li class="dropdown__select-option" role="option">
+                                    Jawa Tengah
+                                </li>
+                            </ul>
+                        </ul>			
+                    </label>
+                </div>
+                </nav>
+            </div>
+            <div class="Grid-2">
+                <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+
+                <div class="dropdown2">
+                    <input type="checkbox" class="dropdown2__switch" id="filter-switch-2" hidden />
+                    <label for="filter-switch-2" class="dropdown2__options-filter">
+                        <ul class="dropdown2__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown2__filter-selected" aria-selected="true">
+                                Kota...
+                            </li>
+                            <ul class="dropdown2__select" id="kota-menu" onclick="addText()">
+                            </ul>
+                        </ul>			
+                    </label>
+                </div>
+            </div>
+            <div class='Grid-3'>
+                <div class='dropdown3'>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="code.js"></script>
+    <script>
+        function toggleTheme() {
+            // Obtains an array of all <link>
+            // elements.
+            // Select your element using indexing.
+            var theme = document.getElementsByTagName('link')[0];
+  
+            // Change the value of href attribute 
+            // to change the css sheet.
+            if (theme.getAttribute('href') == 'style.css') {
+                theme.setAttribute('href', 'style-dm.css');
+            } else {
+                theme.setAttribute('href', 'style.css');
+            }
+        }
+    </script>
+</body>
+</html>
